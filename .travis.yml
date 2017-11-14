@@ -1,0 +1,14 @@
+sudo: required
+dist: trusty
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
+script:
+- mkdir _build
+- xelatex -interaction=nonstopmode -halt-on-error -output-directory _build picoshop-report.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: oHBrRRc91d9QQ2rZNHF0sow3T3+H7vFbisZp9k3Bug7iPDnqq7gX+/Sd0LV6Vqtg+yQFnrxaPlD4LKF2lvlmJEb7X1LiMaqBtOMQQjZTzsY1UdhBM+2t3Osl0B8oFb2Ier7wPoxawA9isH3Y7ffFkMKEu492DhqufyJtv9t8HlHo9kGZNMTU7RtolzxMVTGmEMUfVE6a9bKZHZTj0zBW8G4qDXKdPxBZs/NUCEB13Zvde3EjvNnf9pOLvr6R78rS9qi8kKCAPxcPVHdX/j+VvaXor09a96L5wphlM0661cL1ywtGzWxCAa2lgri4CIMa25AnyxUTmRplgDoUBxK62nJ9V7qa7K0Rz1ak/jzaYNpYydxb6I8QMTGXUY2xaqIc5asancqzl8qPSJ2ePiJUKoiwCUSmC9b4g56YvQTNBqmuyHkEQeWwylpFiP0G5h9hb75tnRUybT6PxwvRs6G5q4jo0tzJQ4acasSnzzLOgRqgA6yfAlBkay/zr87kcwSnpU/Z6Qj7e4wXTh5JBx7zGnJb8RACH9/fjN/fik7CqQfb504UkcHSUPoJ+HSn2bEVylk5TGi0reK9fwraPzk6sGiNjhPZX/p4vbYboRLmaMbp4JXKEX2Y2Kytl2NLFhsT5l8IlBHxqPqlYFLMPtHuQdPVkda45NGL924GXlNNcek=
+  file: _build/picoshop-report.pdf
+  on:
+    repo: willeponken/picoshop-report
