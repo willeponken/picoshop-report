@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{csvsimple}
 \usepackage{url}
+\usepackage{hyperref}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage[margin=0.8in]{geometry}
@@ -18,12 +19,12 @@
 \usepackage[american]{circuitikz}
 \usepackage[titletoc,title]{appendix}
 \usepackage{amssymb}
-\usepackage{physics}
 \usepackage{array,etoolbox}
 
 \preto\tabular{\setcounter{magicrownumbers}{0}}
 \newcounter{magicrownumbers}
 \newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
+\newcommand{\ruler}{\noindent\rule{\textwidth}{1pt}}
 
 \title{D0018 Project Report}
 \author{Anders Dahl, naddah-5\\
@@ -189,7 +190,7 @@ Comment support for articles & 21 & AD & Backlog \\
 Currently there are no tests for the service. The tests will be documented according to the following template.
 
 \bigskip
-\hline
+\ruler
 \subsection{Test case 1}
 \subsubsection*{Purpose}
 \subsubsection*{Requirement traceability}
@@ -206,7 +207,7 @@ Currently there are no tests for the service. The tests will be documented accor
 \end{tabular}
 \end{table}
 \subsubsection*{Notes}
-\hline
+\ruler
 
 \newpage
 \section{System limitations and improvements}
@@ -216,10 +217,10 @@ The main limitations on the system will likely be multi-platform support. This h
 \begin{table}[H]
 \centering
 \begin{tabular}{ll}
-Git repository: & \href{git://github.com/willeponken/picoshop.git} \\
-Git web interface: & \href{https://github.com/willeponken/picoshop} \\
+Git repository: & \url{git://github.com/willeponken/picoshop.git} \\
+Git web interface: & \url{https://github.com/willeponken/picoshop} \\
 Demo instance: & \textit{No instance is currently deployed.} \\
-Latest project report: & \href{https://github.com/willeponken/picoshop-report/releases} \\
+Latest project report: & \url{https://github.com/willeponken/picoshop-report/releases} \\
 \end{tabular}
 \end{table}
 
